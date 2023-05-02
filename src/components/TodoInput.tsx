@@ -1,8 +1,12 @@
-import React, { ChangeEvent, useState, KeyboardEvent } from "react";
+import React, { ChangeEvent, useState, KeyboardEvent, FC } from "react";
 import { v4 as uuid } from "uuid";
 import { TodoItem } from "./Todo";
 
-export const TodoInput = ({
+type TodoInputProps = {
+  onItemAdded: (item: TodoItem) => void;
+};
+
+export const TodoInput: FC<TodoInputProps> = ({
   onItemAdded,
 }: {
   onItemAdded: (item: TodoItem) => void;
