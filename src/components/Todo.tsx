@@ -9,10 +9,10 @@ export type TodoItem = {
 };
 
 export type TodoProps = {
-  items: TodoItem[];
+  items?: TodoItem[];
 };
 
-export const Todo: FC<TodoProps> = ({ items }) => {
+export const Todo: FC<TodoProps> = ({ items = [] }) => {
   const { todos, addTodoItem, markTodoAsDone } = useTodo(items);
 
   return (
