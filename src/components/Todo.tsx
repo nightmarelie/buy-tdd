@@ -16,7 +16,8 @@ export const Todo: FC<TodoProps> = ({ items = [] }) => {
   const { todos, addTodoItem, markTodoAsDone } = useTodo(items);
 
   return (
-    <div className="containers">
+    <div className="container">
+      <h1>Todo App</h1>
       <TodoInput onItemAdded={addTodoItem} />
       <TodoList todos={todos} markItemAsDone={markTodoAsDone} />
     </div>

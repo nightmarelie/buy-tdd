@@ -16,14 +16,9 @@ export const TodoList: FC<TodoListProps> = ({
   return (
     <ol>
       {todos.map((item) => (
-        <li key={item.id}>
+        <li key={item.id} onClick={() => markItemAsDone(item)}>
           <span>{item.title}</span>
-          <span
-            onClick={() => markItemAsDone(item)}
-            className="material-symbols-outlined"
-          >
-            check
-          </span>
+          <span className="material-symbols-outlined">check_circle</span>
         </li>
       ))}
     </ol>

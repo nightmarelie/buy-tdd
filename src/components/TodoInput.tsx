@@ -33,6 +33,7 @@ export const TodoInput: FC<TodoInputProps> = ({
       onChange={handleChange}
       onKeyDown={handleKeyDown}
       placeholder="Buy some milk."
+      aria-label="input"
     />
   );
 };
