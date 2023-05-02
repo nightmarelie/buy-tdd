@@ -1,5 +1,7 @@
 import React, { FC } from "react";
 import { useTodo } from "../hooks/useTodo";
+import { TodoInput } from "./TodoInput";
+import { TodoList } from "./TodoList";
 
 export type TodoItem = {
   id: string;
@@ -11,7 +13,12 @@ export type TodoProps = {
 };
 
 export const Todo: FC<TodoProps> = ({ items }) => {
-  const { todos, addTodo, markTodoAsDone } = useTodo(items);
+  const { todos, addTodoItem, markTodoAsDone } = useTodo(items);
 
-  return <div className="containers">Todo</div>;
+  return (
+    <div className="containers">
+      <TodoInput onItemAdded={addTodoItem} />
+      <TodoList todos={todos} markItemAsDone={markTodoAsDone} />
+    </div>
+  );
 };

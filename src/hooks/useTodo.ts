@@ -4,7 +4,7 @@ import { TodoItem } from "../components/Todo";
 export const useTodo = (items: TodoItem[] = []) => {
   const [todos, setTodos] = useState<TodoItem[]>(items);
 
-  const addTodo = (todo: TodoItem) => {
+  const addTodoItem = (todo: TodoItem) => {
     setTodos([...todos, todo]);
   };
 
@@ -14,7 +14,7 @@ export const useTodo = (items: TodoItem[] = []) => {
 
   return {
     todos,
-    addTodo,
+    addTodoItem,
     markTodoAsDone,
   };
 };
