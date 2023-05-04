@@ -55,3 +55,28 @@ li span:last-child {
 ol li.urgent {
   border-left: 4px solid orangered;
 }
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.item {
+  margin: 0.5rem;
+}
+
+.item > div:nth-child(2) {
+  margin-left: 1rem;
+}
+
+.img {
+  width: 3rem;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
