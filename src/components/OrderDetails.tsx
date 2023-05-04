@@ -1,7 +1,6 @@
 import notebook from "../assets/notebook.jpg";
 import pen from "../assets/pen.jpg";
 
-import "./orderdetails.css";
 export const OrderDetails = () => {
   return (
     <div className="container">
