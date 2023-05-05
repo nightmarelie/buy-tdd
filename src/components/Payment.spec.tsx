@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { Payment } from "./Payment";
 
 describe("Payment", () => {
@@ -16,12 +16,20 @@ describe("Payment", () => {
     ).toBeInTheDocument();
   });
 
-  it("shows the text when the checkbox is checked", () => {
+  it("shows thanks when the checkbox is checked", () => {
     render(<Payment amount={10} />);
 
     const checkbox = screen.getByRole("checkbox");
-    checkbox.click();
+    fireEvent.click(checkbox);
 
     expect(screen.getByText("Thanks for your donation.")).toBeInTheDocument();
+  });
+
+  it("shows the total amount", () => {
+    render(<Payment amount={20} />);
+
+    const button = screen.getByRole("button");
+
+    expect(button).toHaveTextContent("$20");
   });
 });
