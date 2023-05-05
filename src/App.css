@@ -13,7 +13,12 @@ body {
   background-color: #eee;
 }
 
-.container {
+.App {
+  text-align: center;
+}
+
+.container,
+.App {
   width: 480px;
   margin: 4rem auto;
 }

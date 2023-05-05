@@ -1,5 +1,5 @@
-import notebook from "../assets/notebook.jpg";
-import pen from "../assets/pen.jpg";
+import notebook from "../assets/notebook.jpeg";
+import pen from "../assets/pen.jpeg";
 
 export const OrderDetails = () => {
   return (
