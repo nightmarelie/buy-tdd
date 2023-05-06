@@ -2,7 +2,7 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import { Payment } from "./Payment";
 
 describe("Payment", () => {
-  it("renders a payment", () => {
+  it("renders a payment title", () => {
     render(<Payment amount={10} />);
 
     expect(screen.getByText("Payment")).toBeInTheDocument();
