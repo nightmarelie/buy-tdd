@@ -9,7 +9,7 @@ describe("Payment", () => {
   });
 
   it("shows the option of donate", () => {
-    render(<Payment amount={10} />);
+    render(<Payment amount={12} />);
 
     expect(
       screen.getByText("I would like to donate $1 to charity.")
