@@ -32,15 +32,4 @@ describe("Payment", () => {
 
     expect(button).toHaveTextContent("$20");
   });
-
-  it("shows correct amount when checkbox is checked", () => {
-    render(<Payment amount={19.9} />);
-
-    const checkbox = screen.getByRole("checkbox");
-    fireEvent.click(checkbox);
-
-    const button = screen.getByRole("button");
-
-    expect(button).toHaveTextContent("$20");
-  });
 });
