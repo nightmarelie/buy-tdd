@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { TodoInput } from "./TodoInput";
 
 describe("TodoInput", () => {
@@ -14,10 +14,8 @@ describe("TodoInput", () => {
     render(<TodoInput onItemAdded={onItemAdded} />);
     const input = screen.getByLabelText("input");
 
-    input.focus();
-    input.setSelectionRange(0, 0);
-    input.value = "Buy some milk.";
-    input.dispatchEvent(new KeyboardEvent("keydown", { key: "Enter" }));
+    fireEvent.change(input, { target: { value: "Buy some milk." } });
+    fireEvent.keyDown(input, { key: "Enter" });
 
     expect(onItemAdded).toHaveBeenCalledTimes(1);
     expect(onItemAdded).toHaveBeenCalledWith({
