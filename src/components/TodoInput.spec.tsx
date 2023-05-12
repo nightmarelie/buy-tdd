@@ -23,4 +23,15 @@ describe("TodoInput", () => {
       title: "Buy some milk.",
     });
   });
+
+  it("should not call onItemAdded when enter is not pressed", () => {
+    const onItemAdded = jest.fn();
+    render(<TodoInput onItemAdded={onItemAdded} />);
+    const input = screen.getByLabelText("input");
+
+    fireEvent.change(input, { target: { value: "Buy some milk." } });
+    fireEvent.keyDown(input, { key: "Space" });
+
+    expect(onItemAdded).toHaveBeenCalledTimes(0);
+  });
 });
