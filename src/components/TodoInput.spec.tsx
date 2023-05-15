@@ -34,4 +34,15 @@ describe("TodoInput", () => {
 
     expect(onItemAdded).toHaveBeenCalledTimes(0);
   });
+
+  it("should clear the input box when enter is pressed", () => {
+    const onItemAdded = jest.fn();
+    render(<TodoInput onItemAdded={onItemAdded} />);
+    const input = screen.getByLabelText("input");
+
+    fireEvent.change(input, { target: { value: "Buy some milk." } });
+    fireEvent.keyDown(input, { key: "Enter" });
+
+    expect(input).toHaveValue("");
+  });
 });
