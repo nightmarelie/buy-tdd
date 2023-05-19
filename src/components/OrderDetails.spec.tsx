@@ -8,11 +8,4 @@ describe("OrderDetails", () => {
 
     expect(orderDetails).toBeInTheDocument();
   });
-
-  it("should render the order details", () => {
-    render(<OrderDetails />);
-    const orderDetails = screen.getByText("Order Details");
-
-    expect(orderDetails).toBeInTheDocument();
-  }
 });

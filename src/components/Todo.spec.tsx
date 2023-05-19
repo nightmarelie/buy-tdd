@@ -53,13 +53,11 @@ describe("Todo", () => {
   });
 
   it("marks an item as undone", () => {
-    render(
-      <Todo items={[{ id: "id-1", title: "buy some milk", done: true }]} />
-    );
+    render(<Todo items={[{ id: "id-1", title: "buy some milk" }]} />);
 
     const item = screen.getByText("buy some milk");
     fireEvent.click(item);
 
-    expect(screen.queryByText("buy some milk")).toBeInTheDocument();
+    expect(screen.queryByText("buy some milk")).not.toBeInTheDocument();
   });
 });

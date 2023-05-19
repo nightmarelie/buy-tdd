@@ -21,6 +21,7 @@ export const TodoInput: FC<TodoInputProps> = ({
     if (e.key === "Enter") {
       const id = uuid();
       onItemAdded({ id: id, title: todo });
+      setTodo("");
     }
   };
 
