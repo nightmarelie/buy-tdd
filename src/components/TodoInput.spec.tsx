@@ -45,4 +45,15 @@ describe("TodoInput", () => {
 
     expect(input).toHaveValue("");
   });
+
+  it("should not clear the input box when enter is not pressed", () => {
+    const onItemAdded = jest.fn();
+    render(<TodoInput onItemAdded={onItemAdded} />);
+    const input = screen.getByLabelText("input");
+
+    fireEvent.change(input, { target: { value: "Buy some milk." } });
+    fireEvent.keyDown(input, { key: "Space" });
+
+    expect(input).toHaveValue("Buy some milk.");
+  });
 });
