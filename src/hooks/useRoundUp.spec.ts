@@ -17,4 +17,12 @@ describe(`useRoundUp`, () => {
     expect(total).toEqual(1);
     expect(tip).toEqual(1);
   });
+
+  it(`should return total and tip when amount is 1.1`, () => {
+    const { result } = renderHook(() => useRoundUp(1.1, true));
+
+    const { total, tip } = result.current;
+    expect(total).toEqual(2);
+    expect(tip).toEqual(0.9);
+  });
 });
