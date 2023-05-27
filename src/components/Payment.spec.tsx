@@ -55,4 +55,20 @@ describe("Payment", () => {
 
     expect(button).toHaveTextContent("$20");
   });
+
+  it("shows the total amount when the checkbox is checked and unchecked multiple times", () => {
+    render(<Payment amount={20} />);
+
+    const checkbox = screen.getByRole("checkbox");
+    fireEvent.click(checkbox);
+    fireEvent.click(checkbox);
+    fireEvent.click(checkbox);
+    fireEvent.click(checkbox);
+    fireEvent.click(checkbox);
+    fireEvent.click(checkbox);
+
+    const button = screen.getByRole("button");
+
+    expect(button).toHaveTextContent("$20");
+  });
 });
